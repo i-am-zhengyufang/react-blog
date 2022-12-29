@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // 编译过程中需要引入的库文件的列表
+    "allowJs": true, // 允许编译 js 文件
+    "skipLibCheck": true, // 跳过声明文件的类型检查
+    "esModuleInterop": true, // es 模块互操作，屏蔽 ESModule和CommonJS之间的差异
+    "allowSyntheticDefaultImports": true, // 允许通过import x from 'y' 即使模块没有显式指定 default 导出
+    "strict": true,
+    "forceConsistentCasingInFileNames": true, // 对文件名称强制区分大小写
+    "noFallthroughCasesInSwitch": true, // 为 switch 语句启用错误报告
+    "module": "esnext", // 生成代码的模块化标准
+    "moduleResolution": "node",
+    "resolveJsonModule": true, // 允许导入扩展名为 .json 的模块
+    "isolatedModules": false, // 是否将没有 import/export 的文件视为旧（全局而非模块化）脚本文件,一开始设为true结果老报错，就关了。
+    "noEmit": true, // 编译时不生成任何文件（只进行类型检查）
+    "jsx": "react-jsx",
+    "baseUrl": "src", //基准路径，因此下面我就没写src/components啥的了
+    "paths": {
+      "@/*": ["*"],
+      "components/*": ["components/*"]
+    }
+  },
+  "include": ["./**/*.ts", "src/api/axios.ts"], //由于需要处理根目录的global.d.ts,默认是src
+  "exclude": ["node_modules/**/*"]
+  // 指定允许 ts 处理的目录
+}

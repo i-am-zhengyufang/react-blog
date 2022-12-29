@@ -1,0 +1,60 @@
+
+ .searchList
+    margin-top: 10px 
+    height: 80px
+    overflow-y: auto
+    font_color(font_normal_color)
+    .item
+        cursor: pointer
+        position: relative
+        font-size: $mdfontSize
+        .itemTitle
+            width: 100%
+            margin-left: 30px
+            @extend .text-ellipsis
+        &::before
+            position: absolute
+            top: 4px
+            content: ''
+            height: 10px
+            width: 10px
+            border-radius: 50%
+            border: 3px solid $themeColor
+            background-color: transparent
+        &:hover
+            span
+                color: $secondaryDeepColor
+            &::before
+                border-color: $secondaryDeepColor
+        
+.searchHistory
+    padding: 16px 24px
+    font_color(font_normal_color)
+    .top
+       display: flex
+       align-items: center
+       justify-content: space-between
+       .icon
+            width: 18px
+            &:hover
+                fill: $themeColor 
+    .tags
+        margin-top: 16px
+        display: flex
+        flex-wrap: wrap
+        .block
+            my_border(1px,solid,border_color)
+            padding: 4px 10px
+            border-radius: 2px
+            text-align: center
+            cursor: pointer
+            margin: 0 6px 16px 0
+            &:hover 
+                bg_color(deep_bgc)
+    .empty
+        text-align: center
+        line-height: 100px
+.findTip
+    margin-top: 10px
+    text-align: center
+    font_color(font_normal_color)

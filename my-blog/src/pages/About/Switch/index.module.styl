@@ -1,0 +1,27 @@
+.switch
+    flex-vertical-center(flex-start)
+    color: $textHiddenColor
+    .switchBtn
+        position: relative
+        height: 35px
+        width: 75px
+        background-color: $themeColor
+        border-radius: 20px
+        margin: 0 20px
+        .switchHandle
+            height: 35px
+            width: 35px
+            border-radius: 50%
+            position: absolute
+            left: 0
+            background-color: $themeDeepColor
+            transition: all .3s ease-in-out
+            cursor: pointer
+        .handleRight
+            left: calc(100% - 35px)
+        
+    .site,.me
+        font-size: $xxlfontSize
+        font-weight: 700
+        &.activeOn
+            font_color(font_normal_color)

@@ -1,0 +1,33 @@
+@layer base {
+  .title {
+    @apply font-bold text-lg m-4;
+  }
+  .card {
+    @apply bg-base;
+    &:hover {
+      @apply shadow;
+    }
+  }
+}
+@layer components {
+  .num-card {
+    @apply text-center cursor-pointer p-3;
+    .num {
+      @apply font-bold text-lg;
+    }
+    &:hover {
+      .num {
+        @apply text-base-hover;
+      }
+    }
+  }
+
+  .cate-box {
+    @apply w-3/5;
+  }
+  .tag-box {
+    @apply flex-1;
+  }
+}
+
+// 在这里使用group group-hover不生效，具体见https://github.com/tailwindlabs/tailwindcss/issues/2848

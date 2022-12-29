@@ -1,0 +1,112 @@
+@import './variables.styl'  
+@import './theme.styl'
+/* 需要导入才能使用变量 */
+
+
+
+//获取背景色
+bg_color($color)
+  //默认样式（任意选择一个主题即可注意要和下面的默认主题一致）
+  background-color: bright[$color];
+  
+  for item in themeList
+    //判断html的data-theme的属性值，{}是Stylus插值
+    [data-theme = {item.name}] & {
+      //这里的item可以当作一个对象，item[$color]可表示为：对象名.属性
+      background-color: item[$color];
+    }
+
+//获取字体颜色
+font_color($color)
+  color: bright[$color];
+
+  for item in themeList
+    [data-theme = {item.name}] & {
+      color: item[$color];
+    }
+
+my_fill($color)
+  fill: bright[$color];
+
+  for item in themeList
+    [data-theme = {item.name}] & {
+      fill: item[$color];
+    }
+
+// woc不能叫border 要不然他就会报乱七八糟的错误
+my_border($w=1px, $s=solid, $color)
+  border: $w $s bright[$color];
+
+  for item in themeList
+    [data-theme={item.name}] & {
+      border: $w $s item[$color];
+    }
+  
+text_shadow($x,$y,$r,$color)
+  text-shadow:$x $y $r bright[$color]
+  for item in themeList
+    [data-theme={item.name}] & {
+      text-shadow: $w $s item[$color];
+    }
+
+
+
+
+  flex-vertical-center($justify-content=center, $flex-direction=row)
+    display: flex
+    flex-direction: $flex-direction
+    justify-content: $justify-content
+    align-items: center
+
+line-height-center($height)
+    text-align: center
+    height: $height
+    line-height: $height
+
+text-ellipsis-multi($line)
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+
+around($width)
+  width: $width
+  height: $width
+  border-radius: 50%
+
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.abs-center 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+.right-card
+  .headerInfo
+    padding-bottom: 5px
+    border-radius: 10px
+    margin-bottom: 10px
+    border-bottom:1px solid rgb(32, 157, 123)
+    .icon
+      width: 20px
+      height: 20px
+      margin-right: 10px
+    .text
+      padding: 5px
+      font-size: 12px
+      background-color: $themeColor
+      color: #fff
+    
+  
+        
+        
+        
+        
+        
+        

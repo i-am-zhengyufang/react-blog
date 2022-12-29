@@ -1,0 +1,27 @@
+// 这个样式还挺难写，没用flex，一下子icon不对齐，一下子name和cnt不对齐
+.classesCard
+    @extend .right-card
+    .classesItem
+        font_color(font_color_lighter)
+        margin-top: 10px
+        cursor: pointer
+        transition: all 0.5s 
+        .icon
+          my_fill(font_color_lighter)
+        &:hover
+            padding: 0 8px
+            color: $themeColor
+            .icon
+              fill: $themeColor
+      .name
+        display: inline-block
+        width: 80%
+        @extend .text-ellipsis
+        vertical-align: middle
+      .count
+        width: 10% //必须添加宽度，且变成行内块元素，要不然右侧居中无效
+        display: inline-block
+        text-align: right
+        vertical-align: middle
+      .icon
+        width: 8%

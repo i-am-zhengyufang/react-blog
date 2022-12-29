@@ -1,0 +1,23 @@
+const Router = require('koa-router')
+const router = new Router()
+const article = require('./article')
+const category = require('./category')
+const tag = require('./tag')
+const say = require('./say')
+const timeline = require('./timeline')
+const about = require('./about')
+const comment = require('./comment')
+const upload = require('./upload')
+const login = require('./login')
+
+router.use(article.routes())
+router.use(category.routes())
+router.use(tag.routes())
+router.use(say.routes())
+router.use(timeline.routes())
+router.use(about.routes())
+router.use(comment.routes())
+router.use(upload.routes())
+router.use(login.routes())
+
+module.exports = router

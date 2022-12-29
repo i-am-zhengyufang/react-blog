@@ -1,0 +1,286 @@
+@font-face {
+  font-family: 'myFont';
+  src: url('~assets/font/myfont.ttf');
+}
+
+html,
+body {
+  height: 100%
+  font-weight: 400
+  font-family: myFont
+}
+
+
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
+  list-style: none
+  box-sizing: border-box
+}
+html {
+  font-size: 14px
+}
+body {
+  line-height: 1.2
+}
+
+:focus {
+  outline: 1
+}
+
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  display: block
+}
+
+nav ul {
+  list-style: none
+}
+
+blockquote,
+q {
+  quotes: none
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ""
+  content: none
+}
+
+a {
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
+  text-decoration: none
+  color: $themeDeepestColor
+}
+
+
+del {
+  text-decoration: line-through
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000
+  cursor: help
+}
+
+table {
+  border-collapse: collapse
+  border-spacing: 0
+}
+
+hr {
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid #cccccc
+  margin: 1em 0
+  padding: 0
+}
+
+body::-webkit-scrollbar {
+  /*滚动条整体样式,注意纵向不能修高度，横不能修宽度，我改了半天没反应*/
+  height: 5px
+}
+body::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 7px
+  background-color: $themeColor
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: $themeDeepColor
+}
+body::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  border-radius: 7px
+  height: 5px
+}
+
+ul::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 8px
+}
+ul::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  background-color: $themeColor
+}
+ul::-webkit-scrollbar-thumb:hover {
+  background-color: $themeDeepColor
+}
+ul::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  border-radius: 7px
+}
+
+
+input,
+textarea {
+  background: none
+  outline: none
+  border: none
+  border-radius: 0
+}
+
+input,
+select {
+  vertical-align: middle
+}
+
+img[src=""],
+img:not([src]) {
+  opacity: 0
+}
+
+.ant-pagination
+  .ant-pagination-prev button,
+  .ant-pagination-item a,
+  .ant-pagination-next button
+        font_color(font_normal_color)
+  .ant-pagination-item-active a
+        color: $themeColor!important
+ 
+.icon
+  width: 25px
+  height:25px
+  vertical-align: middle
+  overflow: hidden
+.ant-pagination
+  bg_color(deep_bgc)
+  font_color(font_normal_color)
+  padding: 10px
+  border-radius: 10px
+  text-align: center
+  
+.ant-modal-content
+  bg_color('main_bgc')
+  svg
+   my_fill(font_normal_color)
+  .ant-modal-header
+    bg_color('main_bgc')
+    .ant-modal-title
+      font_color(font_normal_color)
+
+
+.ant-form-item-label
+    label
+        width: 100%
+        padding-left: 10px //它奶奶的还不是因为网站那个label半天不居中
+        background-color: $secondaryColor
+        border-top-left-radius: 10px
+        border-bottom-left-radius: 10px
+        font-weight: 700
+        text-align: center
+ // input跟textarea很多类似的，修改它会影响textarea的
+// 但是我觉得影响了也蛮好看就没管了
+.ant-form-item-control-input
+    .ant-input,.ant-input-password
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
+
+
+// 这个没用上哦
+// #loading 
+//   position: absolute
+//   top: 0
+//   left: 0
+//   right: 0
+//   bottom: 0
+//   height: 100vh
+//   display: flex
+//   align-items: center
+//   justify-content: center
+//   z-index: 999
+

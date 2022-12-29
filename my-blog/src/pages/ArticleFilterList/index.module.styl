@@ -1,0 +1,103 @@
+.articleFilterList
+    .rowBarContainer
+        padding: 30px 
+        border-radius: 20px
+        bg_color(main_bgc)
+        font_color(font_normal_color)
+        .total
+            font-size: $xlfontSize
+            margin-bottom: 10px
+            span
+                font-weight: 700
+        .rowbar
+            padding: 10px 10px 8px 10px
+            my_border(,,border_color)
+            border-left-width: 0
+            border-top-width: 0
+            border-right-width: 0
+            transition: all .3s
+            margin-bottom: 5px
+            cursor: pointer
+            &:hover
+                box-shadow: 0 3px 8px $cardShadowColor
+                transform: translateY(-2px)
+            .title
+                @extend .text-ellipsis
+                padding-bottom: 5px
+                font-weight: 700
+                font-size: $mdfontSize
+                position: relative
+                display: inline-block
+                max-width: 100% 
+                //由于行内块才能使得after长度自适应文本，但是这样就文本省略无法实现，因此我这里设置最大宽度
+                &:after
+                    position: absolute
+                    left: 0
+                    bottom: 0
+                    width: 100%;
+                    height: 2px;
+                    background-color: $themeDeepestColor;
+                    content: "";
+                    transform: scaleX(0);
+                    transition: .4s ease-in-out;
+                &:hover
+                    &:after
+                        transform: scaleX(1)
+            .info
+                height: 70px
+                display: flex
+                // 下面两句这个用于移动端 cate和tag占据了时间的位置时
+                flex-wrap: wrap
+                justify-content: space-between
+                align-content: space-around
+                align-items: center
+                .icon
+                    height: 15px
+                    width: 15px
+                    margin-right: 4px
+                .cate,.tag
+                    display: inline-block
+                    position: relative
+                    padding: 0 5px 0px 10px
+                    border-radius: 0 5px 5px 0
+                    // margin: 0 10px 
+                    margin: 5px
+                    &:before
+                        content: ""
+                        width: 0px
+                        height: 0px
+                        position: absolute
+                        top: -0.5px
+                        left: -18px
+                        border: 9px solid transparent
+                        border-right-color: #cfb7c4
+                    &:after
+                        content: " "
+                        width: 4px
+                        height: 4px
+                        background-color: #fff
+                        border-radius: 4px
+                        position: absolute
+                        top: 7px
+                        left: 2px
+                .cate
+                    color: #c22676
+                    background-color: #cfb7c4
+                .tag
+                    color: #df7d2d
+                    background-color: #edc7a6
+                    &:before
+                        border-right-color: #edc7a6
+                .date,.num
+                    display: inline-block
+                    padding: 5px 10px
+                    border-radius: 20px
+                .date
+                    background-color: #ffe5e9
+                    color: #ff4e6a
+                    margin-right: 10px
+                .num
+                    background-color: #d8ecf9
+                    color: #31aeff
+                
+

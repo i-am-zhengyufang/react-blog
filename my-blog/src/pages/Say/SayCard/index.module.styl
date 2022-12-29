@@ -1,0 +1,39 @@
+.sayCard
+    display: flex
+    width: 80%
+    margin: 0 auto
+    padding: 20px 0
+    color: #fff
+    .avatar
+        width: 60px
+        height: 60px
+        border-radius: 50%
+        margin-right: 20px
+    .rightContent
+        position: relative
+        flex: 1
+        padding: 20px
+        border-radius: 10px
+        background-color: #ff9e77
+        &::before
+            position: absolute
+            content: ''
+            height: 0
+            width: 0
+            top: 10%
+            right: 100%
+            border: 10px solid transparent
+            border-right-color: #ff9e77
+        .content
+            padding-bottom: 15px
+            border-bottom: 1px dashed #fff
+        .date
+            padding-top: 10px
+            font-size: $smallRadius
+            .icon
+                width: 14px
+                height: 14px
+                margin-right: 10px
+                fill: #fff
+                vertical-align: -20%
+           

@@ -1,0 +1,39 @@
+.commentItem
+    display: flex
+    flex-direction: column
+    .commentMain
+        display: flex
+        margin-top: 20px
+        .leftImg
+            height: 40px
+            width: 40px
+            border-radius: 50%
+            margin-right: 20px
+        .rightArea
+            flex: 1
+            .topInfo
+                width: 100%
+                display: flex
+                justify-content: space-between
+                .nickname
+                    font_color(font_color_lighter)//加不加''都可以
+                    .author
+                        display: inline-block
+                        padding: 2px 4px
+                        margin-left: 10px
+                        border-radius: 10px
+                        color: $highlightText
+                        font-size: $smfontSize
+                        background-color: $themeColor
+                .icon
+                    width: 15px
+                    height: 15px
+                    cursor: pointer
+            .contentBox
+                .toUserName
+                    color: $themeColor
+                .time
+                    margin-left: 10px
+                    font-size: $smfontSize
+                    font_color(font_color_lightest)
+    

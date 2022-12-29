@@ -1,0 +1,89 @@
+// cv即可，注意单行注释也要缩进
+.clockCard
+  @extend .right-card
+
+
+//时钟实现  
+.clock
+    around(200px)
+    my_border(2px,solid,font_normal_color)
+    margin:  auto
+    position: relative
+    overflow: hidden
+    .line   /* 设置6条线，并且旋转这6条线，将最外面的那个圆平分为12等分 */
+        width: 2px
+        height: 200px
+        bg_color(font_normal_color)
+        position: absolute
+        left: 50%
+        &.line1 
+          transform: translate(-50%, 0) rotate(0deg)
+        &.line2 
+          transform: translate(-50%, 0) rotate(30deg)
+        &.line3 
+          transform: translate(-50%, 0) rotate(60deg)
+        &.line4 
+          transform: translate(-50%, 0) rotate(90deg)
+        &.line5 
+          transform: translate(-50%, 0) rotate(120deg)
+        &.line6 
+          transform: translate(-50%, 0) rotate(150deg)
+        /* 设置遮罩层，遮住6条线多余的部分，在视觉上显示出每一个整点的刻度 */
+    .shade
+      around(160px)
+      bg_color(main_bgc)
+      position: absolute
+      @extend .abs-center 
+      /* 设置三个最中心的那个小圆 */
+    .circle 
+      around(15px)
+      background-color: $themeDeepColor
+      position: absolute
+      @extend .abs-center 
+      /* 设置时针的样式和动画 */
+    .hour 
+      width: 8px
+      height: 55px
+      border-radius: 5px
+      // 这个不太符合规则 但是没办法他就是背景要文字的颜色
+      bg_color(font_normal_color)
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -100%)
+      animation: move 43200s linear infinite
+      /* 设置指针旋转圆点 */
+      transform-origin: bottom center
+      /* 设置分针的样式和动画 */
+    .minutes 
+      width: 5px
+      height: 70px
+      border-radius: 5px
+      bg_color(font_normal_color)
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -100%)
+      animation: move 3600s linear infinite 
+      /* 设置指针旋转圆点 */
+      transform-origin: bottom center
+  
+      /*设置秒针的样式和动画 */
+    .seconds 
+      width: 3px
+      height: 90px
+      border-radius: 5px
+      background-color: $themeColor
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -100%)
+      animation: move 60s infinite steps(60) 
+      /* 设置指针旋转圆点 */
+      transform-origin: bottom center
+      /* 定义动画css */
+@keyframes move
+  to
+    transform: translate(-50%, -100%) rotate(360deg)
+
+

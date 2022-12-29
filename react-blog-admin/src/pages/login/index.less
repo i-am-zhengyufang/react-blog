@@ -1,0 +1,36 @@
+@layer base {
+  .visitor-btn {
+    @apply float-right mb-4 text-white cursor-pointer;
+  }
+}
+//这样写 死活不打包我服了 只要是antd+tailwind这种就不打包，离谱离谱离大谱 震撼
+
+// @layer components {
+//   .ant-pro-form-login-page {
+//     @apply bg-cover text-white bg-center;
+//     .ant-pro-form-login-page-container {
+// background-color: rgba(0, 0, 0, 0.5);
+//       .ant-pro-form-login-page-desc {
+//         @apply text-white;
+//       }
+//       img {
+//         @apply rounded;
+//       }
+//     }
+//   }
+// }
+
+.ant-pro-form-login-page {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  .ant-pro-form-login-page-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    .ant-pro-form-login-page-desc {
+      color: #fff;
+    }
+    img {
+      border-radius: 50%;
+    }
+  }
+}

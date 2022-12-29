@@ -1,0 +1,27 @@
+@layer components {
+  .cate-edit {
+    @apply p-5;
+    .list {
+      @apply mt-6;
+      .item {
+        @apply flex justify-between;
+        .num {
+          @apply h-5 w-5 flex items-center justify-center bg-primary rounded-full;
+        }
+        .cate-name {
+          /* 可得把宽度写死，要不然溢出省略号也会影响别人 */
+          @apply mx-4 w-3/4 truncate;
+        }
+        .action-btn {
+          @apply cursor-pointer text-primary;
+          .edit {
+            @apply text-primary mr-2;
+          }
+          .del {
+            @apply text-danger;
+          }
+        }
+      }
+    }
+  }
+}

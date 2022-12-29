@@ -1,0 +1,22 @@
+.pageTitle
+    // height: calc(100vh - $navHeight)这样写无效，如果不含变量则有效
+    height: 'calc(100vh  - %s)' % $navHeight
+.home
+    display: flex
+    justify-content: space-between
+    .section
+        width: 70%
+    .aside
+        width: 25%
+        position: sticky
+
+
+@media screen and (max-width: 720px) 
+    .home
+        display: block
+        .section
+            width: 100%
+        .aside
+            width: 85%
+            margin: 20px auto
+

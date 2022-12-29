@@ -1,0 +1,25 @@
+@import './stylus/base.styl'
+
+#root
+    height: 100%
+body
+    background: url(assets/imgs/bg.jpg) no-repeat//不要加~,加了反而报错
+    background-size: 100% 100%
+    background-attachment: fixed //很重要！！当页面的其余部分滚动时，背景图像不会移动。
+.app
+    // position: relative
+    margin: 0 auto
+    height: 100%
+
+[data-theme='dark'] .app
+    &::before
+        position: fixed
+        content: ''
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: rgba(0,0,0,0.4)
+        z-index: -1 //不能阻挡别人的点击事件啥的呀
+        
+    

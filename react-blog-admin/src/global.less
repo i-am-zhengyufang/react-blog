@@ -1,0 +1,59 @@
+/* @tailwind base;
+@tailwind components; 写上这两句好真的会影响antd样式，希望umi后面可以解决这bug吧*/
+#root {
+  height: 100%; //写在base里面也不打包无语
+}
+@import '~antd/dist/antd.variable.min.css';
+@tailwind utilities;
+@layer base {
+  :root {
+    --color-text-base: theme('colors.black');
+    --color-text-primary: theme('colors.red.400');
+    --color-text-hover: theme('colors.red.500');
+    --color-danger: theme('colors.yellow.400');
+    --color-white: theme('colors.white');
+    --bg-color: theme('colors.white');
+    --bg-primary-color: theme('colors.red.300');
+    --bg-primary-hover-color: theme('colors.red.400');
+  }
+  body::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    @apply w-2;
+  }
+  body::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+  }
+  body::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-hover;
+  }
+  body::-webkit-scrollbar-track {
+    @apply rounded-sm;
+  }
+
+  div::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    @apply h-2;
+  }
+  div::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+  }
+  div::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-hover;
+  }
+  div::-webkit-scrollbar-track {
+    @apply rounded-sm;
+  }
+}
+
+@layer components {
+  p code,
+  pre {
+    @apply bg-code p-2 text-code;
+  }
+  blockquote {
+    @apply bg-blockquote p-2;
+  }
+  img {
+    @apply max-w-lg;
+  }
+}

@@ -1,0 +1,26 @@
+.post
+    .postContent
+        position: relative
+        display: flex
+        margin-top: 450px 
+        .asideNavBar
+            width: 30%
+        .contentInner
+            // 必须要写死宽度，我服了后面评论预览那里就一直挤压目录
+            flex: 1 
+            overflow: hidden //不加要不然文章不知道为啥死活撑开
+            bg_color(deepest_bgc)
+            font_color(font_normal_color)
+            border-radius: 10px
+            padding: 20px
+    .cateBtn
+        visibility: hidden
+        svg
+            width: 18px
+
+@media screen and (max-width: 720px) 
+    .asideNavBar
+        display: none
+    //注意权重覆盖
+    .post .cateBtn
+        visibility:visible

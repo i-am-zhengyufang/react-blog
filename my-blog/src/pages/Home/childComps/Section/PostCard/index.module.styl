@@ -1,0 +1,43 @@
+
+.postCard
+    cursor: pointer
+    font_color(font_normal_color)
+    .title
+        text-align: center
+        margin-bottom: 20px
+        font-size: $postcardTitleSize
+        span
+            box-shadow: inset 0 -12px 0 0 #e2eafde0
+    .info
+        text-align: center
+        font_color(font_color_lighter)
+        .separator
+            margin: 0 10px 
+        .icon
+            height: 15px
+            width: 15px
+            margin-right: 5px
+            vertical-align: top
+            my_fill(font_color_lighter)
+        .tag
+            position: relative
+            margin-right: 15px
+            &:not(:last-child)::after 
+                position: absolute
+                right: -10px
+                top: 50%
+                transform: translateY(-50%)
+                content: '';
+                bg_color(font_color_lighter)
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                
+
+
+    .content
+        text-indent: 2em
+        line-height: 2
+        margin: 20px 0 30px 0
+        text-ellipsis-multi(3)
+ 

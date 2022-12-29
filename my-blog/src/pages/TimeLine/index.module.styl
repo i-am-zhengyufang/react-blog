@@ -1,0 +1,22 @@
+:global
+    .timelineContent
+        bg_color(main_bgc)
+        border-radius: 20px
+        padding: 100px 20px 40px 20px
+        .ant-timeline-item
+            height: 100px
+            .ant-timeline-item-head 
+                width: 20px
+                height: 20px
+                top: -5px
+                border-width: 7px
+                transform: translateX(-50%)
+                margin-left: 0
+                transition: all .1s
+                &:hover
+                    top: -10px
+            .ant-timeline-item-tail
+                my_border(2px,solid,border_color)
+                transform: translateX(-50%)
+
+

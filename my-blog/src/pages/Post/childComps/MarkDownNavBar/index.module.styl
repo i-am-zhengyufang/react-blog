@@ -1,0 +1,30 @@
+.asideDirectory
+    bg_color(deepest_bgc)
+    font_color(font_normal_color)
+    position: sticky
+    top: 50px
+    border-radius: 10px
+    padding: 10px
+    margin-right: 30px
+    span
+        font-weight: 700
+        font-size: 18px
+    .icon
+        width: 20px
+        height: 20px
+        vertical-align: bottom
+        margin-right: 8px
+
+:global
+    .markdown-navigation 
+        .title-anchor
+            font_color(font_normal_color)
+            font-family: myFont
+            &:hover,&.active  
+                //.active并不是:active,没写错哦，是因为active的时候它会带一个类名叫active
+                color: $themeColor
+    // 处理移动端样式
+    .ant-drawer-content
+        bg_color(deepest_bgc)
+        svg
+            my_fill(font_normal_color)
