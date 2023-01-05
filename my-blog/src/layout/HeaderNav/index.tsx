@@ -89,7 +89,9 @@ const HeaderNav: React.FC<navProps> = ({ mode, setMode }) => {
     navigate(params.key);
   };
   const onClickMenu = (params) => {
-    window.document.documentElement.setAttribute("data-theme", params.key);
+    // 原来的错误写法：window.document.documentElement.setAttribute("data-theme", params.key); 存在移动端和pc端切换day导致icon错乱的bug
+    const day = params.key === "bright" ? true : false;
+    setDay(day);
   };
   const handleChangeMode = () => {
     setDay(!day);
