@@ -1,12 +1,12 @@
 .searchBox
         position: relative
-        padding: 10px 0
         text-align: center
         .searchInput
-            width: 60%
+            width: calc(100% - 60px)
+            overflow: hidden
             height: 20px
             text-align: center
-            padding: 5px 40px
+            padding: 5px 0
             border-radius: 20px
             background-color: $inputBgColor
         .rightIcon
@@ -15,9 +15,10 @@
             width: 15px
             top: 50%
             transform: translateY(-50%)
-            right: 18%
+            right: 60px
             cursor: pointer
         .searchBtn
+            width: 40px
             float: right 
             cursor: pointer
             font-size: $mdfontSize
