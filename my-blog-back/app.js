@@ -47,7 +47,7 @@ app.use(async (ctx, next) => {
                     ctx.set('refresh_token', refreshToken);//跨域后为了安全就去掉了自定义头，需要加上这句话 要不然前端一直拿不到
                 }
             })
-            if (flag) await next()//很重要这句好 这辈子都不想写后端了妈的
+            if (flag) await next()
 
         } catch (err) {
             console.log(err);
