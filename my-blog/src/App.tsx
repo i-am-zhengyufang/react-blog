@@ -14,6 +14,7 @@ const App: React.FC = () => {
           colorPrimary: "#f1b3be",
           colorPrimaryHover: "#ffc0cb",
           controlOutline: "#ffeaed",
+          fontFamily: "myFont",
         },
       }}
     >
