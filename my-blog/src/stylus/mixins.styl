@@ -52,7 +52,10 @@ text_shadow($x,$y,$r,$color)
 
 
 
-  flex-vertical-center($justify-content=center, $flex-direction=row)
+    //很奇怪，我一开始把assets放在src结果路径没错，编译之后路径就变了不显示，这里也不知道为啥../就可以拿到了
+
+// mixin竟然不能带@,变量可带$也可不带，否则报错Stylus resolver error: unexpected ","还一直因为是逗号搞错了
+flex-vertical-center($justify-content=center, $flex-direction=row)
     display: flex
     flex-direction: $flex-direction
     justify-content: $justify-content

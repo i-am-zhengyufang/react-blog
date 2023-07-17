@@ -16,6 +16,8 @@ const Post = lazy(() => import("@/pages/Post"));
 
 const Main: React.FC = () => (
   <main className={s.main}>
+    {/* {s}一开始手贱想打印一下s，结果报错Uncaught Error: Objects are not valid as a React child (found: object with keys {main}). 
+    If you meant to render a collection of children, use an array instead. 半天没反应过来*/}
     <ErrorBoundary>
       <Suspense
         fallback={

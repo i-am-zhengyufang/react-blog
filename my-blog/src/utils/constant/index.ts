@@ -4,8 +4,8 @@ export const siteTitle = '圆筒冰激凌的小站'
 
 export const icpNo = '湘ICP备2022010861号'
 export const icpSite = 'https://beian.miit.gov.cn/#/Integrated/index'
-export const copyRight = '©2022 - 2022 By 圆筒冰激凌'
-export const startTime = '2022-7-30';
+export const copyRight = '©2022 - 2023 By 圆筒冰激凌🌸'
+export const startTime = '2022-8-30';
 
 
 export const defaultPageSize = 4

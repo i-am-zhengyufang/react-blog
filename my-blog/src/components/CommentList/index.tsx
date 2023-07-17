@@ -7,6 +7,7 @@ import { CommentItemProps } from "./type";
 interface IProps extends CommentItemProps {
   replys: Array<CommentItemProps>;
 }
+// 离谱了传递的参数一定是一个对象，因此我就算传递一个参数也要{}解构
 
 const CommentList: React.FC<{ list: Array<IProps> }> = ({ list }) => {
   return (

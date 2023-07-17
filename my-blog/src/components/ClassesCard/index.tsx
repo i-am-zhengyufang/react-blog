@@ -23,6 +23,8 @@ const ClassesCard: React.FC<IProps> = ({ isStatic, showHeadline = true }) => {
         </div>
       )}
       <div className={s.classes}>
+        {/* 我一开始想着loading是true那么不会渲染插槽children，所以没加data&&结果报错了
+        看来就算不渲染他还是一开始会执行这里的代码啊 */}
         {data &&
           data.map((item) => (
             <div

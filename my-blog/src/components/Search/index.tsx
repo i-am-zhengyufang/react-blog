@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setModalClose } from "@/redux/slices/modalOpenSlice";
 
 const Search: React.FC = () => {
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement>(); //不加这个又警告
   const isModalOpen = useSelector((state: RootState) => state.modalOpen);
 
   const dispatch = useDispatch();
@@ -30,6 +30,9 @@ const Search: React.FC = () => {
       JSON.stringify(searchHistorys || [])
     );
   }, [searchHistorys]);
+
+  // 这个文件代码写的巨乱呜呜呜，老是为出现监听onInput 导致重新渲染结果list跟着更新，
+  // 然后vscode自个就给出修复我弄出来的 然后必须添加依赖性要不然一直不变了
 
   const clearHistorys = useCallback(() => {
     setsearchHistorys([]);
@@ -60,12 +63,19 @@ const Search: React.FC = () => {
     const isempty = e.target.value.trim() === "";
     setisclsShow(!isempty);
     if (isempty) setisShowPane(false);
+    // 由于为空时，会更新showPane，比如我输入123又删掉那么此时
+    // 应该一直显示历史记录，显然无需更新list，因此我用了callback
+    // 和memo
   };
   const onClear = () => {
     setisShowPane(false);
     inputRef.current!.value = "";
   };
 
+  // const handleSearchHis = (v) => {
+  //   inputRef.current.value = v;
+  //   handleSearch();
+  // };
   const handleSearchHis = useCallback(
     (v) => {
       setisclsShow(true);

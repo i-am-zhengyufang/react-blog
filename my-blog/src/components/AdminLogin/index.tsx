@@ -16,6 +16,7 @@ const AdminLogin: React.FC<Iprops> = ({ open, setopen }) => {
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const role = useSelector((state: RootState) => state.commentInfo.role);
+  // useCallback必须在顶部，不能在一个函数内部 所以单独创建一个fn
   const fn = useCallback(
     // 不加useCallback则每次都会重新创建一个函数，导致pre一直为0，节流失效
     throttle(
@@ -42,7 +43,7 @@ const AdminLogin: React.FC<Iprops> = ({ open, setopen }) => {
     } else {
       const { email, password } = v;
       if (email && password) fn(email, password);
-      else messageApi.warning("邮箱和密码必填哦");
+      else messageApi.warning("邮箱和密码必填哦"); //不直接rules加required是因为这样点退出登录也必须填邮箱密码才行
     }
   };
   return (

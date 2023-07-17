@@ -17,9 +17,11 @@
 
 :global
     .markdown-navigation 
+        max-height: calc(100vh - 200px)
+        overflow-y: auto  !important
         .title-anchor
             font_color(font_normal_color)
-            font-family: myFont
+            font-family: ZCOOL KuaiLe
             &:hover,&.active  
                 //.active并不是:active,没写错哦，是因为active的时候它会带一个类名叫active
                 color: $themeColor
@@ -28,3 +30,9 @@
         bg_color(deepest_bgc)
         svg
             my_fill(font_normal_color)
+        .ant-drawer-body
+            .markdown-navigation
+                // 由于ant-drawer-body会自动带滚动条，因此需要修改它的max-height，避免出现两个滚动条
+                max-height: 100%
+                overflow-y: hidden !important
+        

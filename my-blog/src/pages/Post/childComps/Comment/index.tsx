@@ -6,7 +6,7 @@ import { PostContext, CommentContext } from "@/context";
 import { useContext } from "react";
 
 const Comment: React.FC = () => {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState([]); //本来是括号默认data结果异步完全不等他
   const post_id = useContext(PostContext);
 
   let func = async () => {

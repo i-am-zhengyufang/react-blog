@@ -1,5 +1,5 @@
 import Icon from "components/Icon";
-import React, { FormEventHandler, MouseEventHandler, forwardRef } from "react";
+import React, { FormEventHandler, forwardRef } from "react";
 import s from "./index.module.styl";
 
 interface Iprops {

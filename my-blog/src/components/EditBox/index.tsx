@@ -59,6 +59,9 @@ const EditBox: React.FC<IProps> = ({
     })
   );
 
+  // 如果不用antd的组件那么用value=redux的value 每次onChange就修改redux的value
+  // 这样就实现了所有评论都会保持一致，但是因为antd没有value只能使用initvalue代替value
+
   useEffect(() => {
     // 不用useEffect就死活不渲染
     form.setFieldsValue({
@@ -143,6 +146,7 @@ const EditBox: React.FC<IProps> = ({
     const email = form.getFieldValue("email");
     if (reg.test(email)) {
       const qq = email.split("@")[0];
+      // 选择640的原因是因为高清
       dispatch(setAvatar(`https://q1.qlogo.cn/g?b=qq&nk=${qq}&s=640`));
     }
     dispatch(setEmail(email));
@@ -151,6 +155,9 @@ const EditBox: React.FC<IProps> = ({
     const link = form.getFieldValue("link");
     dispatch(setLink(link));
   };
+
+  // 麻了不知道是这个eslint的原因还是咋地使用rules={变量x}
+  // 昵称还可以，到邮箱和链接就一直波浪线报警告
 
   const placeholdertext = isReply
     ? `回复  @${msgs.to_user_name}`

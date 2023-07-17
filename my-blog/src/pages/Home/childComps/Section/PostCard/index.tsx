@@ -27,6 +27,7 @@ const PostCard: React.FC<IProps> = ({
         <span>{title}</span>
       </div>
       <div className={s.info}>
+        {/* 这里必须写s.icon,写icon样式没效果，因为我只引入了一个s对象 */}
         <svg className={classNames(s.icon, "icon")} aria-hidden="true">
           <use xlinkHref="#icon-date"></use>
         </svg>

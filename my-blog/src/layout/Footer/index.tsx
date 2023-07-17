@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       </div>
       <div className={s.runTime}>
         本站已经勉勉强强存活了
-        <span className={s.runTimeNum}>{useRunTime()}</span>天
+        <span className={s.runTimeNum}>{useRunTime()}</span>天 (*^▽^*)
       </div>
     </footer>
   );

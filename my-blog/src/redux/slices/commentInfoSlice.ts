@@ -39,7 +39,13 @@ const commentInfoSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-
+        // [getAdminInfo.fulfilled.type](state, actions) {
+        //     const { name, avatar, email, role } = actions.payload
+        //     state.nickname = name
+        //     state.avatar = avatar
+        //     state.email = email
+        //     state.role = role
+        // },
         builder.addCase(getAdminInfo.fulfilled, (state, action) => {
 
             const { name = '', avatar = '', email = '', role = '' } = action.payload
@@ -51,6 +57,6 @@ const commentInfoSlice = createSlice({
     }
 })
 
-
+// 不懂就点进去看看createslice函数 emmmm也比较懵 必须要导出emmm
 export const { setAvatar, setNickname, setEmail, setLink, setInitState } = commentInfoSlice.actions
 export default commentInfoSlice.reducer

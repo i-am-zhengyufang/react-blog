@@ -15,6 +15,6 @@ const modalOpenSlice = createSlice({
     }
 })
 
-
+// 不懂就点进去看看createslice函数 emmmm也比较懵
 export const { setModalOpen, setModalClose } = modalOpenSlice.actions
 export default modalOpenSlice.reducer

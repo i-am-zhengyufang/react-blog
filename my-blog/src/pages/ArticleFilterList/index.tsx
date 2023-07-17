@@ -16,6 +16,7 @@ const ArticleFilterList: React.FC = () => {
   let func: Function;
   const { id } = location.state as { id: number };
 
+  // const title = search.get("category") || search.get("tag");
   if (search.get("category")) {
     title = search.get("category")!;
     func = getArticleByCate;
@@ -23,7 +24,11 @@ const ArticleFilterList: React.FC = () => {
     title = search.get("tag")!;
     func = getArticleByTag;
   }
-
+  //也可以通过searchParams.get("xx");
+  // 奶奶的如果我用if else if else分开useRequest则eslint报错说
+  // React Hook “useRequest“ is called conditionally
+  // 可能没有一个useRequest执行
+  // 因此我只能通过func=的方式
   const { data, isLoading } = useRequest(func, id);
 
   return (
@@ -54,7 +59,7 @@ const ArticleFilterList: React.FC = () => {
                     ))}
                   </span>
                   <span className={s.right}>
-                    <span className={s.date}>{formatDate(item.date)}</span>
+                    <span className={s.date}>{formatDate(item.time)}</span>
                     <span className={s.num}>
                       约{formatNum(item.content.length)}字
                     </span>

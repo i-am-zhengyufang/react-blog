@@ -8,6 +8,11 @@ import { useRequest } from "@/utils/hooks";
 import { getArticleLen, getCateLen, getTagLen } from "@/api";
 
 const InfoCard: React.FC = () => {
+  // const {
+  //   data: { total: articlelen },
+  // } = useRequest(getArticleLen);
+  // 本来可以这样解构的，但是因为data是undefined，报错undefined，没有total属性，奶奶的只能给它默认为数组
+
   const { total: articlelen } = useRequest(getArticleLen).data || {};
   const { total: catelen } = useRequest(getCateLen).data || {};
   const { total: taglen } = useRequest(getTagLen).data || {};

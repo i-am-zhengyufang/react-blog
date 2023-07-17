@@ -1,6 +1,5 @@
 import { Pagination } from "antd";
 import React from "react";
-import s from "./index.module.styl";
 
 interface IProps {
   pageNo: number;
@@ -27,17 +26,15 @@ const MyPagination: React.FC<IProps> = ({
   return (
     <>
       {total > pageSize ? (
-        <div className={s.pagination}>
-          <Pagination
-            current={pageNo}
-            total={total}
-            pageSize={pageSize}
-            pageSizeOptions={[3, 6, 9]}
-            showSizeChanger={true}
-            showQuickJumper={true}
-            onChange={onChange}
-          ></Pagination>
-        </div>
+        <Pagination
+          current={pageNo}
+          total={total}
+          pageSize={pageSize}
+          pageSizeOptions={[4, 6, 8]}
+          showSizeChanger={true}
+          showQuickJumper={true}
+          onChange={onChange}
+        ></Pagination>
       ) : null}
     </>
   );

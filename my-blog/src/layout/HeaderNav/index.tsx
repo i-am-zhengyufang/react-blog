@@ -89,7 +89,6 @@ const HeaderNav: React.FC<navProps> = ({ mode, setMode }) => {
     navigate(params.key);
   };
   const onClickMenu = (params) => {
-    // 原来的错误写法：window.document.documentElement.setAttribute("data-theme", params.key); 存在移动端和pc端切换day导致icon错乱的bug
     const day = params.key === "bright" ? true : false;
     setDay(day);
   };
@@ -98,10 +97,13 @@ const HeaderNav: React.FC<navProps> = ({ mode, setMode }) => {
   };
 
   let pre = document.documentElement.scrollTop || document.body.scrollTop;
+  // 一开始写的0 改变了navshow会导致页面重新渲染 因此pre就会出现经常为0的错乱情况
+  // 本来用的mousewheel不知道为啥失效了，然后mdn又建议用scroll
   useEventListener(
     "scroll",
     throttle((event) => {
       let now = document.documentElement.scrollTop || document.body.scrollTop;
+      // 等号是因为点击返回顶部按钮会出现now和pre一样大 有点奇怪我也没太明白哈哈
       let up = pre >= now;
       pre = now;
       // 下滑则now>pre 为false 不显示nav
@@ -110,6 +112,7 @@ const HeaderNav: React.FC<navProps> = ({ mode, setMode }) => {
   );
   return (
     <>
+      {/*  必须用个东西包着 */}
       <nav className={classNames(s.navWrap, { [s.hidden]: !navShow })}>
         <h2 className={s.navTitle} onClick={() => navigate("/")}>
           {navTitle}
@@ -173,6 +176,7 @@ const HeaderNav: React.FC<navProps> = ({ mode, setMode }) => {
           trigger={["click"]}
         >
           <Space>
+            {/* 不加space点它没有得 离谱怪不得官网都加了 */}
             <Icon icon="bucket" className={s.icon} />
           </Space>
         </Dropdown>
@@ -181,6 +185,7 @@ const HeaderNav: React.FC<navProps> = ({ mode, setMode }) => {
           className={s.icon}
           click={() => dispatch(setModalOpen())}
         />
+        {/* 注意antd的例子是open={open}是无效的 改为visable */}
         <Drawer
           width={200}
           placement="left"

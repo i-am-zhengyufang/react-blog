@@ -1,6 +1,6 @@
 import { MouseEventHandler } from "react";
 import classNames from "classnames";
-import { Skeleton } from "antd";
+import { Divider, Skeleton } from "antd";
 
 import s from "./index.module.styl";
 
@@ -11,6 +11,7 @@ interface IProps {
   className?: string;
   onClick?: MouseEventHandler<HTMLElement>;
 }
+// vue和react不不一样，不能直接给组件加类名<Card className="xx"/>，要想加就必须把className传递给子组件
 
 const Card: React.FC<IProps> = ({
   children,
